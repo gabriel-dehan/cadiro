@@ -1,0 +1,23 @@
+.auth-wrapper {
+  padding: 2em;
+  border-radius: 5px;
+
+  background: $dark-brown;
+  color: $brown;
+}
+
+.auth-links {
+  margin-top: 1em;
+
+  a::after {
+    content: "●";
+    margin-left: 8px;
+    margin-right: 3px;
+    color: #7b655c;
+    font-size: 0.8em;
+  }
+
+  a:last-child::after {
+    content: "";
+  }
+}

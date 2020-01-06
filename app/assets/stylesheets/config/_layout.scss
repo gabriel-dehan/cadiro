@@ -1,0 +1,150 @@
+
+hr {
+  background-color: #5e4f45;
+  color: #5e4f45;
+}
+ul {
+  list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QILBTYv67Mf9wAAAAZQTFRF////o41tM9LLpAAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAAE0lEQVQI12NgQAEFDD/AsICBAQAakgPJO2sGpQAAAABJRU5ErkJggg==);
+}
+code {
+  background-color: #1a1b18;
+  color: #a38d6d;
+}
+pre {
+  background-color: #1a1b18;
+  border: 1px dashed #383636;
+  color: #a38d6d;
+}
+
+body {
+  background: url(https://p7p4m6s5.ssl.hwcdn.net/public/news/21-04-2016b/jimonions.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: -100;
+  pointer-events: none;
+}
+
+a {
+  color: $orange-brown;
+
+  &:hover {
+    color: darken($orange-brown, 15%);
+  }
+}
+
+.wrapper {
+  width: 96vw;
+  margin: 2em auto;
+}
+
+// Forms
+
+input.form-control {
+  background-color: $dark;
+  border-color: lighten($dark, 10%);
+  color: $brown;
+}
+
+.form-actions {
+  input[type=submit], button {
+    background: $brown;
+    border: 1px solid $dark-brown;
+    color: $dark;
+    border-radius: 5px;
+  }
+}
+
+// PoE Items
+
+.item-text-unique {
+  color: rgb(175, 96, 37);
+}
+
+.item-text-rare {
+  color: rgb(255, 255, 119);
+}
+
+.item-text-magic {
+  color: rgb(136, 136, 255);
+}
+
+.item-text-white {
+  color: rgb(200, 200, 200);
+}
+
+.item-text-gem {
+  color: rgb(27, 162, 155);
+}
+
+.item-text-currency {
+  color: rgb(170, 158, 130);
+}
+
+.item-text-corrupted {
+  color: rgb(210, 0, 0);
+}
+
+.item-text-card {
+  color: rgb(14, 186, 255);
+}
+
+.item-text-prophecy {
+  color: rgb(181, 75, 255);
+}
+
+.item-text-essence {
+  color: rgb(164, 210, 255);
+}
+
+
+.item-bg-unique {
+  background-color: rgb(175, 96, 37);
+}
+
+.item-bg-rare {
+  background-color: rgb(255, 255, 119);
+}
+
+.item-bg-magic {
+  background-color: rgb(136, 136, 255);
+}
+
+.item-bg-white {
+  background-color: rgb(200, 200, 200);
+}
+
+.item-bg-gem {
+  background-color: rgb(27, 162, 155);
+}
+
+.item-bg-currency {
+  background-color: rgb(170, 158, 130);
+}
+
+.item-bg-corrupted {
+  background-color: rgb(210, 0, 0);
+}
+
+.item-bg-card {
+  background-color: rgb(14, 186, 255);
+}
+
+.item-bg-prophecy {
+  background-color: rgb(181, 75, 255);
+}
+
+.item-bg-essence {
+  background-color: rgb(164, 210, 255);
+}
+

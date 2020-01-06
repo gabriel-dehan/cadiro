@@ -1,0 +1,138 @@
+.league-wrapper {
+  color: $brown;
+  margin-bottom: 2em;
+  margin-left: 5px;
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .exalt-price {
+    font-family: 'Fontin-Bold';
+    background: #61533f4f;
+    padding: 0.1em 0.4em;
+    
+    img {
+      width: 28px;
+    }
+  }
+
+  .legends {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+    max-width: 250px;
+
+    .acronym {
+      font-size: 11px;
+      font-family: 'Fontin-Bold';
+    }
+    .definition {
+      font-size: 11px;
+    }
+  }
+}
+
+.analyses-table {
+  background: $dark-brown;
+  color: $brown;
+  border-radius: 5px;
+
+  thead {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  thead, thead th {
+    background: $dark;
+    border: none;
+    font-family: 'Fontin-Bold';
+
+    tr {
+      text-align: center;
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid $faded-brown;
+    }
+
+    th, td {
+      border: none;
+      vertical-align: middle;
+    }
+  }
+
+  .item-image {
+    position: relative;
+
+    & > img {
+      max-width: 32px;
+    }
+
+    .item-tooltip {
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      width: 400px;
+    }
+  }
+
+  .item {
+    .item-name {
+      font-size: 1.2em;
+      margin-bottom: 0;
+    }
+    
+    .item-type {
+      color: $faded-brown;
+    }
+  }
+
+  .formatted-price {
+    img {
+      width: 32px;
+      margin-left: 5px;
+    }
+  }
+
+  .buyout, .sellout, .profit, .esd, .occurences, .trades {
+    text-align: center;
+  }
+
+  .comments {
+    .comments-input-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    textarea {
+      background: $dark;
+      border: 1px solid $dark-brown;
+      color: $brown;
+      border-radius: 2px;
+      padding: 0.4em 0.6em;
+      vertical-align: middle;
+      width: 75%;
+      border-radius: 3px;
+    }
+
+    .save-button {
+      border: 1px solid $faded-brown;
+      background: transparent;
+      color: $brown;
+      border-radius: 3px;
+      padding: 0.4em 0.6em;
+      margin-left: 20px;
+
+      &:hover {
+        background: $faded-brown;
+        color: $dark-brown;
+      }
+    }
+  }
+}

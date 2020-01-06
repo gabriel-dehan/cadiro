@@ -1,12 +1,51 @@
-.navbar-lewagon {
+.navbar-poe {
   justify-content: space-between;
-  background: white;
+  background: $dark;
+  color: $brown;
+  padding: 8px 2.5em;
+
+  a {
+    color: $light-brown !important;
+
+    &:hover {
+      color: $brown !important;
+    }
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-poe .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-poe .navbar-brand {
+  color: $brown !important;
+  font-family: "Fontin-Bold";
+}
+
+.navbar .nav-item.dropdown {
+  display: flex;
+  margin-left: 15px;
+
+  .dropdown-toggle::after {
+    margin-left: 5px;
+  }
+
+  .dropdown-menu {
+    background: $dark-brown;
+    a { 
+      color: $brown;
+
+      &:hover {
+        background: transparent;
+        color: white;
+      }
+    }
+  }
+}
+
+.navbar .user-icon {
+  color: $brown;
+  font-size: 22px;
+  align-self: center;
+  cursor: pointer;
 }

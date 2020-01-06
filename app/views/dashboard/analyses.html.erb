@@ -1,0 +1,20 @@
+<div class="league-wrapper">
+  <div class="league-info">
+    <h1><%= Season.current.name %></h1>
+    <div class="exalt-price">
+      1 <img src="http://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1" />&nbsp;
+      =&nbsp;<%= Season.current.currencies_prices["exalted"] %>&nbsp;<img src="http://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1" />&nbsp;(average)
+    </div>
+  </div>
+  <ul class="legends">
+    <li>
+      <abbr class="acronym" title="Estimated Sweep Difficulty">ESD:</abbr>
+      <span class="definition">Estimated Sweep Difficulty, defines how hard it is to obtain the item, based on occurences, nb of trades and of failures.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="dashboard-wrapper">
+  <%= react_component("AnalysesTable", data: fetchJson('dashboard/data/analyses.json') ) %>
+</div>
+

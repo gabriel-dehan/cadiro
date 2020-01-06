@@ -4,3 +4,15 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-info {
+  color: #85672f;
+  border-color: #31312f;
+  background: $dark-brown;
+}
+
+.alert-warning {
+  color: #962121;
+  border-color: #31312f;
+  background: $dark-brown;
+}
