@@ -15,6 +15,8 @@ On top of having a nice display and not forcing you to enter your livesearches i
 Moreover, this application plugs itself inside [Poe Trade Enhancer](https://github.com/ghostscript3r/poe-trade-official-site-enhancer), sending your livesearch data as soon as you save them in PTE. Well, actually it is a slightly altered version of PTE, modified so it can send data to **Path of Economy**.
 
 Here is what it looks like for now, the design is **very much** a work in progress.
-![alt text](/documentation/economy.png?raw=true )
+
 ![alt text](/documentation/economy2.png?raw=true )
+![alt text](/documentation/economy.png?raw=true )
+![alt text](/documentation/howto.png?raw=true )
 
