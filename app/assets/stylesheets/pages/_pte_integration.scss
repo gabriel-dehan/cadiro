@@ -1,0 +1,38 @@
+.pte-integration-wrapper {
+  
+  h1 {
+    margin-bottom: 0.6em;
+  }
+
+  .pte-generator {
+    margin-top: 1.2em;
+    border-top: 1px solid $faded-brown;
+    padding-top: 1em;
+
+    .label-token {
+      font-family: "Fontin-Bold";
+    }
+    .token {
+      display: inline-block;
+      padding: 0.2em 0.6em;
+      margin-left: 1em;
+      background-color: rgba($dark, 0.4);
+      color: $item-prophecy;
+      border-radius: 2px;
+    }
+    .warning-token {
+      margin-top: 6px;
+      font-size: 12px;
+      color: $faded-brown;
+    }
+
+    .generator-buttons {
+      margin-top: 25px;
+    }
+
+    .install-pte {
+      margin-bottom: 15px;
+    }
+  }
+
+}

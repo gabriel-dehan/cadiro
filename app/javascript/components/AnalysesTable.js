@@ -46,11 +46,12 @@ class AnalysesTable extends React.Component {
     
     return (
       <div className="analyses-container">
+        <input type="text" className="analyses-search form-control" placeholder="Ring, Boots, Circle of Nostalgia..." />
         <table className="table table-striped analyses-table">
           <thead>
             <tr>
               <th className="watch" scope="col"></th>
-              <th colspan="2" scope="col">Item</th>
+              <th colSpan="2" scope="col">Item</th>
               <th scope="col">Search</th>
               <th scope="col">B/O price</th>
               <th scope="col">S/O price</th>

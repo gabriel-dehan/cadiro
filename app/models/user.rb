@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :analyses, dependent: :destroy
   has_many :season_analyses, through: :analyses
+
+  mount_uploader :pte_script, PteScriptUploader
   
   # has_many :items, through: :analyses
   # alias_attribute :analyzed_items, :items

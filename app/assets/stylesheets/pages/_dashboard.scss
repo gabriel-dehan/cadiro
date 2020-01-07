@@ -33,6 +33,10 @@
   }
 }
 
+.analyses-search {
+  margin-bottom: 1em;
+}
+
 .analyses-table {
   background: $dark-brown;
   color: $brown;
@@ -107,31 +111,123 @@
   .comments {
     .comments-input-container {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
     }
     
     textarea {
-      background: $dark;
-      border: 1px solid $dark-brown;
-      color: $brown;
-      border-radius: 2px;
       padding: 0.4em 0.6em;
+      background: #141512;
+      border: 1px solid $faded-brown;
+      color: $brown;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      border-bottom: none;
       vertical-align: middle;
-      width: 75%;
-      border-radius: 3px;
     }
 
     .save-button {
+      color: $dark;
+      background: $brown;
+      border: none;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
       border: 1px solid $faded-brown;
-      background: transparent;
-      color: $brown;
-      border-radius: 3px;
-      padding: 0.4em 0.6em;
-      margin-left: 20px;
+      border-top: none;
 
       &:hover {
         background: $faded-brown;
         color: $dark-brown;
+      }
+    }
+  }
+}
+
+// Item stats
+
+.item-filters {
+  .inner-filters {
+    border: 1px solid #2b2722;
+    background: $dark-brown;
+    display: none;
+    position: absolute;
+  }
+
+  .filter-toggle {
+    font-family: 'Fontin-Bold';
+    cursor: pointer;
+    display: block;
+    padding: 0.4em;
+    color: $item-prophecy;
+
+    .caret {
+      font-size: 0.8em;
+    }
+
+    &:hover {
+      color: lighten($item-prophecy, 10%);
+    }
+  }
+
+  .show-filters {
+    display: block;
+  }
+
+  .filter {
+    .category-name {
+      background-color: #1b1a1a;
+      display: block;
+      padding: 0.4em;
+      font-family: 'Fontin-Bold';
+      color: $item-unique;
+      border-bottom: 1px solid $faded-brown;
+    }
+
+    .property {
+      background-color: #1f1c17;
+      display: block;
+      padding: 0.4em;
+      font-family: 'Fontin-Bold';
+      border-bottom: 1px solid $faded-brown;
+
+      &.property-corrupted {
+        color: $item-corrupted;
+      }
+      &.property-enchanted {
+        color: $item-card;
+      }
+      &.property-identified {
+        color: $item-rare;
+      }
+      &.property-shaper_item {
+        color: $item-gem;
+      }
+    }
+
+    .filter-name {
+      background-color: #2d2a27;
+      display: block;
+      padding: 0.2em 0.4em;
+      font-family: 'Fontin-Bold';
+      color: $faded-brown;
+      border-bottom: 1px solid $faded-brown;
+    }
+
+    .filter-params {
+      list-style: none;
+      padding: 0;
+      margin-top: 5px;
+      margin-bottom: 8px;
+
+      li {
+        padding-left: 0.5em;
+
+        .param-key {
+          font-family: 'Fontin-Bold';
+        }
+
+        .param-value {
+          color: $item-magic;
+        }
       }
     }
   }

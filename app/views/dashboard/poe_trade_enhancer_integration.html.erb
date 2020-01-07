@@ -1,3 +1,31 @@
-<div class="pte-integration-wrapper">
+<div class="pte-integration-wrapper content-page">
+  <h1>How to use Path of Economy</h1>
+  <p>
+    This applications needs to be fed your live search data from the pathofexile.com/trade website. There are many ways of doing that, but the one that made more sense to us was to use <strong>PoE Trade Enhancer</strong>, a tampermonkey / greasemonkey script that will run in your browser and add functionnalities to the <a href="https://pathofexile.com/trade">pathofexile.com/trade</a> website.<br />
+    When you'll do a new search and save it using <strong>PoE Trade Enhancer</strong>, your search data will be sent to your <strong>Path Of Economy</strong> account.
+  </p>
+  <p>For this to work, we have to plug ourselves into this script and add our own functionnalities, namely sending the data of your livesearches to <strong>Path Of Economy</strong>.</p>
+  <p>This means you'll have to install an altered version of <strong>PoE Trade Enhancer</strong> which you can generate here.</p>
+  <p>
+    All credit goes to <strong>PoE Trade Enhancer</strong> creator <em>ghostscript3r</em>, you can find his amazing project here: <a href="https://github.com/ghostscript3r/poe-trade-official-site-enhancer">https://github.com/ghostscript3r/poe-trade-official-site-enhancer</a>.
+  </p>
+  <p>
+    If you don't have Tampermonkey or Greasemonkey installed, you can look it up <a href="https://greasyfork.org/en/scripts/387586-poe-trade-enhancer">here</a>. But <em>only do the first step</em> as want to install the script from here.
+  </p>
+
+  <div class="pte-generator">
+    <div class="user-token">
+      <span class="token-label">Your token: </span><span class="token"><%= current_user.token %></span>
+      <p class="warning-token"><em>Your token is what enables Poe Trade Enhancer to make requests to our application on your behalf. It acts as both your identifier and password so it's better to keep it to yourself. Anyway, you won't actually need it unless you are a developer.</em></p>
+    </div>
+
+    <div class="generator-buttons">
+      <% if current_user.pte_script? %>
+        <%= link_to "Install PoE Trade Enhancer", current_user.pte_script.url, class: 'install-pte button golden inversed' %>
+        <br />
+      <% end %>
+      <%= link_to "#{current_user.pte_script? ? 'Regenerate' : 'Generate'} my custom PoE Trade Enhancer script", generate_pte_path, class: 'generate-pte button' %>
+    </div>
+  </div>
   
 </div>

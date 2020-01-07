@@ -1,4 +1,4 @@
-
+// General styles
 hr {
   background-color: #5e4f45;
   color: #5e4f45;
@@ -43,9 +43,61 @@ a {
   }
 }
 
+// Layout styles
 .wrapper {
   width: 96vw;
   margin: 2em auto;
+}
+
+.content-page {
+  padding: 2em;
+  border-radius: 5px;
+
+  background: $dark-brown;
+  color: $light-brown;
+
+  strong {
+    color: $brown;
+  }
+}
+
+// Buttons
+
+.button {
+  border: 1px solid $faded-brown;
+  color: $brown;
+
+  background: transparent;
+  border-radius: 3px;
+  padding: 0.4em 0.6em;
+  display: inline-block;
+  
+  &:hover {
+    background: $faded-brown;
+    color: $dark-brown;
+    text-decoration: none;
+  }
+
+  &.golden {
+    border: 1px solid $item-unique;
+    color: $item-unique;
+
+    &:hover {
+      background: $item-unique;
+      color: $dark-brown;
+    }
+
+    &.inversed {
+      background-color: $item-unique;
+      color: $dark;
+
+      &:hover {
+        background: transparent;
+        color: $item-unique;
+      }
+    }
+
+  }
 }
 
 // Forms

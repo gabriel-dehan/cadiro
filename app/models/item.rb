@@ -10,6 +10,10 @@ class Item < ApplicationRecord
   has_many :analyses, dependent: :destroy
   has_many :season_analyses, through: :analyses
 
+  def slug
+    name.parameterize
+  end
+
   private
   def fetch_wiki_data
     # Only works for uniquest for now

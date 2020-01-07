@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { observer, inject } from 'mobx-react';
 import { formatPrice, chaosSubstraction, priceToCurrency } from '../helpers/currency';
+import SearchBreakdown from './SearchBreakdown';
 
 import PoeTradeIcon from '@assets/images/poetrade.png';
 
@@ -47,7 +48,7 @@ class Analysis extends React.Component {
     const { showItem } = this.state;
 
     const profitInCurrency = priceToCurrency(chaosSubstraction(analysis.sellout, analysis.buyout));
-    // console.log(item);
+    // console.log(analysis);
     return (
       <tr>
         <td title="pathofexile.com/trade livesearch">
@@ -68,7 +69,7 @@ class Analysis extends React.Component {
           </span>
         </th>
         <td>
-          Search
+          <SearchBreakdown item={item} search={analysis.search_params} />
         </td>
         <td className="buyout">
           {formatPrice(analysis.buyout.price, analysis.buyout.currency)}
@@ -87,8 +88,8 @@ class Analysis extends React.Component {
         <td className="tags">{item.tags}</td>
         <td className="comments">
           <div className="comments-input-container">
-            <textarea rows="1" onChange={(e) => this.updateComments(e.target.value)}>{this.state.comments}</textarea>
-            <button className="save-button" onClick={() => this.updateAnalysis()}>SAVE</button>
+            <textarea rows="1" onChange={(e) => this.updateComments(e.target.value)} defaultValue={this.state.comments} />
+            <button className="save-button" onClick={() => this.updateAnalysis()}>save</button>
           </div>
         </td>
       </tr>

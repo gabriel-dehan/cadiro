@@ -7,7 +7,7 @@ end
 json.analyses @analyses do |analysis|
   json.id analysis.id
   json.item do 
-    json.extract! analysis.item, :name, :item_type, :rarity, :image, :link, :wiki_item_card, :tags
+    json.extract! analysis.item, :name, :slug, :item_type, :rarity, :image, :link, :wiki_item_card, :tags
   end
   json.season_analyses analysis.season_analyses do |seasonal_analysis|
     json.id seasonal_analysis.id
