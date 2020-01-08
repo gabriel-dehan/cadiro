@@ -18,6 +18,6 @@ Moreover, this application plugs itself inside [Poe Trade Enhancer](https://gith
 Here is what it looks like for now, the design is **very much** a work in progress.
 
 ![alt text](/documentation/economy2.png?raw=true )
-![alt text](/documentation/economy.png?raw=true )
+![alt text](/documentation/economy1.png?raw=true )
 ![alt text](/documentation/howto.png?raw=true )
 
