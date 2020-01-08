@@ -52,7 +52,7 @@ class Analysis extends React.Component {
     return (
       <tr>
         <td title="pathofexile.com/trade livesearch">
-          <a href={this.watchUrl}>
+          <a href={this.watchUrl} _target="blank">
             <img src={PoeTradeIcon} alt="poe trade search" />
           </a>
         </td>
@@ -62,13 +62,13 @@ class Analysis extends React.Component {
             <div className="item-tooltip" dangerouslySetInnerHTML={{__html: item.wiki_item_card}}></div>
           }
         </td>
-        <th className="item">
+        <td className="item">
           <h2 className={`item-name item-text-${item.rarity.toLowerCase()}`}>{item.name}</h2>
           <span className="item-type">
             {item.item_type}
           </span>
-        </th>
-        <td>
+        </td>
+        <td className="search-breakdown">
           <SearchBreakdown item={item} search={analysis.search_params} />
         </td>
         <td className="buyout">
