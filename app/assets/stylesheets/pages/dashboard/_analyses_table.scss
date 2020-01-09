@@ -1,0 +1,108 @@
+.analyses-table {
+  background: $dark-brown;
+  color: $brown;
+  border-radius: 5px;
+
+  thead {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  thead, thead th {
+    background: $dark;
+    border: none;
+    font-family: 'Fontin-Bold';
+
+    tr {
+      text-align: center;
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid $faded-brown;
+    }
+
+    th, td {
+      border: none;
+      vertical-align: middle;
+    }
+  }
+
+  .item-image {
+    position: relative;
+
+    & > img {
+      max-width: 32px;
+    }
+
+    .item-tooltip {
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      width: 400px;
+    }
+  }
+
+  .item {
+    .item-name {
+      font-size: 1.2em;
+      margin-bottom: 0;
+    }
+    
+    .item-type {
+      color: $faded-brown;
+    }
+  }
+
+  .search-breakdown {
+    // text-align: left;
+  }
+
+  .formatted-price {
+    img {
+      width: 32px;
+      margin-left: 5px;
+    }
+  }
+
+  .buyout, .sellout, .profit, .esd, .occurences, .trades {
+    text-align: center;
+  }
+
+  .comments {
+    .comments-input-container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    textarea {
+      padding: 0.4em 0.6em;
+      background: #141512;
+      border: 1px solid $faded-brown;
+      color: $brown;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      border-bottom: none;
+      vertical-align: middle;
+    }
+
+    .save-button {
+      color: $dark;
+      background: $brown;
+      border: none;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+      border: 1px solid $faded-brown;
+      border-top: none;
+
+      &:hover {
+        background: $faded-brown;
+        color: $dark-brown;
+      }
+    }
+  }
+}

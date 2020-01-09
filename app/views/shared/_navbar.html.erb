@@ -12,6 +12,9 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
+          <%= link_to "My searches", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "How to use Cadiro", pte_integration_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">

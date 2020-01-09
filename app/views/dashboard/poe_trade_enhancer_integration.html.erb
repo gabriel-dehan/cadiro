@@ -22,6 +22,7 @@
     <div class="generator-buttons">
       <% if current_user.pte_script? %>
         <%= link_to "Install PoE Trade Enhancer", current_user.pte_script.url, class: 'install-pte button golden inversed' %>
+        <p class="original-pte">If you need to, you can instead <%= link_to "reinstall the original PoE Trade Enhancer", "https://raw.githubusercontent.com/ghostscript3r/poe-trade-official-site-enhancer/master/poe-trade-official-site-enhancer.user.js" %> instead. Beware that you won't be able to use Cadiro's functionalities anymore if you do so.</p>
         <br />
       <% end %>
       <%= link_to "#{current_user.pte_script? ? 'Regenerate' : 'Generate'} my custom PoE Trade Enhancer script", generate_pte_path, class: 'generate-pte button' %>

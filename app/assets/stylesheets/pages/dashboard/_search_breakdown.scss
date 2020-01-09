@@ -1,0 +1,178 @@
+.item-stats {
+  .filter-text {
+    color: $light-brown;
+  }
+}
+
+.item-filters {
+  .inner-filters {
+    border: 1px solid #2b2722;
+    border-radius: 4px;
+    background: rgba(26, 27, 24, 0.89);
+    position: absolute;
+    width: 50vw;
+  }
+
+  .filter-toggle {
+    font-family: 'Fontin-Bold';
+    cursor: pointer;
+    display: block;
+    padding: 12px;
+    color: $item-prophecy;
+
+    .caret {
+      font-size: 0.8em;
+    }
+
+    &:hover {
+      color: lighten($item-prophecy, 10%);
+    }
+  }
+  
+  .filters-list {
+    display: flex;
+
+  }
+
+  .misc-filters-tags {
+    padding: 12px;
+    display: flex;
+    justify-content: flex-start;
+    
+    .misc-filter-tag {
+      border-radius: 3px;
+      border: 1px solid $faded-brown;
+      // background: $faded-brown;
+      color: $light-brown;
+      display: inline-block;
+      padding: 0.2em 0.4em;
+      margin-right: 12px;
+      text-transform: capitalize;
+      font-family: 'Fontin-Bold';
+
+      // &.type-corrupted {
+      //   background: $item-corrupted;
+      // }
+      // &.type-enchanted {
+      //   background: $item-essence;
+      //   color: $dark;
+      // }
+      // &.type-identified {
+      //   background: $item-rare;
+      //   color: $dark
+      // }
+      // &.type-shaper_item {
+      //   background: $item-gem;
+      // }
+      // &.type-elder_item {
+      //   background: $item-gem;
+      // }
+
+      &.type-corrupted {
+        border-color: $item-corrupted;
+        color: $item-corrupted;
+      }
+      &.type-enchanted {
+        border-color: $item-essence;
+        color: $item-essence;
+      }
+      &.type-identified {
+        border-color: $item-rare;
+        color: $item-rare;
+      }
+      &.type-shaper_item {
+        border-color: $item-gem;
+        color: $item-gem;
+      }
+      &.type-elder_item {
+        border-color: $item-gem;
+        color: $item-gem;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .filter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .category-name {
+      background-color: #1b1a1a;
+      display: block;
+      padding: 0.4em;
+      font-family: 'Fontin-Bold';
+      color: $item-unique;
+      border-right: 1px solid #2b2722;
+      border-top: 1px solid #2b2722;
+    }
+
+    &:last-child .category-name {
+      border-right: none; 
+    }
+
+    .category-container {
+      border-right: 1px solid #61533f;
+      
+      &:last-child {
+        flex: 1;
+      }
+    }
+
+    &:last-child .category-container {
+      border-right: none; 
+    }
+
+    .property {
+      background-color: #1f1c17;
+      display: block;
+      padding: 0.4em;
+      font-family: 'Fontin-Bold';
+      border-bottom: 1px solid $faded-brown;
+
+      &.property-corrupted {
+        color: $item-corrupted;
+      }
+      &.property-enchanted {
+        color: $item-card;
+      }
+      &.property-identified {
+        color: $item-rare;
+      }
+      &.property-shaper_item {
+        color: $item-gem;
+      }
+    }
+
+    .filter-name {
+      background-color: #2d2a27;
+      display: block;
+      padding: 0.2em 0.4em;
+      font-family: 'Fontin-Bold';
+      color: #73644e;
+      border-bottom: 1px solid $faded-brown;
+    }
+
+    .filter-params {
+      list-style: none;
+      padding: 0;
+      margin-top: 5px;
+      margin-bottom: 8px;
+
+      li {
+        padding-left: 0.5em;
+
+        .param-key {
+          font-family: 'Fontin-Bold';
+        }
+
+        .param-value {
+          color: $item-magic;
+        }
+      }
+    }
+  }
+}

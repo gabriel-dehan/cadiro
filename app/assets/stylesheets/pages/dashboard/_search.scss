@@ -1,0 +1,19 @@
+.search-container {
+  .analyses-search {
+    margin-bottom: 1em;
+
+    &:focus {
+      background-color: $light-brown;
+      color: $faded-brown;
+      border-color: $faded-brown;
+      box-shadow: 0 0 0 0.2rem rgba(251, 192, 22, 0.25);
+    }
+  }
+}
+
+.search-no-result {
+  background: $dark-brown;
+  color: $light-brown;
+  padding: 2em 1em;
+  border-radius: 3px;
+}
