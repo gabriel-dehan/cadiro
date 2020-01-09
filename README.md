@@ -27,18 +27,18 @@ Here is what it looks like for now, the design is **very much** a work in progre
 
 ### Version 1
 
-- [] Daily ex price from poe.ninja
-- [] Ability to search your searches
-- [] Ability to sort searches
-- [] Ability to remove a search from Cadiro
-- [] Add support for more than unique items
-- [] Ability to select multiple searches and run them at once
-- [] ESD computations
-- [] Button to re-install original PTE version
-- [] Display outdated search (old seasons) as outdated
-- [] Display search name from PTE
-- [] PTE: Inputs for b/o price and s/o price when saving a search
-- [] PTE: Button to confirm a trade has failed / been successful
+- [X] Button to re-install original PTE version
+- [x] Ability to search your searches
+- [ ] Daily ex price from poe.ninja
+- [ ] Ability to sort searches
+- [ ] Ability to remove a search from Cadiro
+- [ ] Add support for more than unique items
+- [ ] Ability to select multiple searches and run them at once
+- [ ] ESD computations
+- [ ] Display outdated search (old seasons) as outdated
+- [ ] Display search name from PTE
+- [ ] PTE: Inputs for b/o price and s/o price when saving a search
+- [ ] PTE: Button to confirm a trade has failed / been successful
 
 ### Version "One day maybe"
 
