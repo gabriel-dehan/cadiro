@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { observer, inject } from 'mobx-react';
 import Fuse from "fuse.js";
-import NinjaAPI from "poe-ninja-api-manager";
 
 import withStores from '../stores/withStores';
 import Analysis from './Analysis';
@@ -51,26 +50,6 @@ class Analyses extends React.Component {
     this.props.seasonsStore.setCurrent(this.props.data.current_season);
 
     this.setupSearch();
-
-    var ninjaAPI = new NinjaAPI({
-      league: "Metamorph"
-    });
-
-    ninjaAPI.update()
-    .then((result) => {
-      console.log("Updated data, here are the results of the requests:", result);
-      return ninjaAPI.save();
-    })
-    .then((success) => {
-      console.log("Saved data", success);
-      return ninjaAPI.getItem("Atziri's Splendour", {links: 5, variant: "ES"});
-    })
-    .then((item) => {
-      return console.log("An item matching the query was found", item);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 
     this.setState({ loaded: true });
   }

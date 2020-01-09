@@ -29,7 +29,7 @@ Here is what it looks like for now, the design is **very much** a work in progre
 
 - [X] Button to re-install original PTE version
 - [x] Ability to search your searches
-- [ ] Daily ex price from poe.ninja
+- [ ] Refresh daily ex price from poewatch with a background job
 - [ ] Ability to sort searches
 - [ ] Ability to remove a search from Cadiro
 - [ ] Add support for more than unique items
