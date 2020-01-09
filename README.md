@@ -25,7 +25,7 @@ Here is what it looks like for now, the design is **very much** a work in progre
 
 ## Roadmap
 
-### Version 1
+### Planned for release
 
 - [X] Button to re-install original PTE version
 - [x] Ability to search your searches

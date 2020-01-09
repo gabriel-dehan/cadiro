@@ -1,14 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { observer, inject } from 'mobx-react';
-import Fuse from 'fuse.js';
+import Fuse from "fuse.js";
+import NinjaAPI from "poe-ninja-api-manager";
 
 import withStores from '../stores/withStores';
 import Analysis from './Analysis';
 
 @inject('analysesStore', 'seasonsStore', 'userStore')
 @observer
-class AnalysesTable extends React.Component {
+class Analyses extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
   };
@@ -22,10 +23,7 @@ class AnalysesTable extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.userStore.setUser(this.props.data.current_user);
-    this.props.seasonsStore.setCurrent(this.props.data.current_season);
-    console.log(this.props.data.analyses)
+  setupSearch() {
     this.fuse = new Fuse(this.props.data.analyses, {
       keys: [
         { name: 'item.name', weight: 0.7 }, 
@@ -45,7 +43,34 @@ class AnalysesTable extends React.Component {
       distance: 50,
       maxPatternLength: 48,
       minMatchCharLength: 2,
+    });
+  }
+
+  componentDidMount() {
+    this.props.userStore.setUser(this.props.data.current_user);
+    this.props.seasonsStore.setCurrent(this.props.data.current_season);
+
+    this.setupSearch();
+
+    var ninjaAPI = new NinjaAPI({
+      league: "Metamorph"
+    });
+
+    ninjaAPI.update()
+    .then((result) => {
+      console.log("Updated data, here are the results of the requests:", result);
+      return ninjaAPI.save();
     })
+    .then((success) => {
+      console.log("Saved data", success);
+      return ninjaAPI.getItem("Atziri's Splendour", {links: 5, variant: "ES"});
+    })
+    .then((item) => {
+      return console.log("An item matching the query was found", item);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
     this.setState({ loaded: true });
   }
@@ -116,7 +141,7 @@ class AnalysesTable extends React.Component {
   render () {
     // Todo: loader
     if (!this.state.loaded) { return null }
-    
+
     return (
       <div className="analyses-container">
         <div className="search-container">
@@ -129,4 +154,4 @@ class AnalysesTable extends React.Component {
   }
 }
 
-export default withStores(AnalysesTable);
+export default withStores(Analyses);
