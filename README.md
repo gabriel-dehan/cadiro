@@ -1,4 +1,4 @@
-# Path of economy
+# Cadiro
 
 Tired of having to use a spreadsheet to register all the live searches I was doing on [pathofexile.com/trade](https://pathofexile.com/trade), I decided to create an application that plugs itself on the aforementionend site to retrieve your livesearch data and display it in an orderly and *searchable* fashion.
 
@@ -11,9 +11,11 @@ On top of having a nice display and not forcing you to enter your livesearches i
 - Sort your livesearches by `ESD`, Estimated Profit, Buyout price, etc...
 - Add comments to your livesearches
 - Your livesearches are scoped by League. If no livesearch was made for the current league, it will display your livesearch from the previous league, with an "outdated" indicator.
-- Hopefully, this is not developed yet but you'll be able to batch select multiple searches and start them at once.
+- Hopefully, you'll be able to batch select multiple searches and start them at once.
 
-Moreover, this application plugs itself inside [Poe Trade Enhancer](https://github.com/ghostscript3r/poe-trade-official-site-enhancer) (PTE), sending your livesearch data as soon as you save them in PTE. Well, actually it is a slightly altered version of PTE, modified so it can send data to **Path of Economy**.
+Moreover, this application plugs itself inside [Poe Trade Enhancer](https://github.com/ghostscript3r/poe-trade-official-site-enhancer) (PTE), sending your livesearch data as soon as you save them in PTE. Well, actually it is a slightly altered version of PTE, modified so it can send data to **Cadiro**.
+
+Beware, for now, it only handles **unique items**.
 
 Here is what it looks like for now, the design is **very much** a work in progress.
 
@@ -21,3 +23,31 @@ Here is what it looks like for now, the design is **very much** a work in progre
 ![alt text](/documentation/economy1.png?raw=true )
 ![alt text](/documentation/howto.png?raw=true )
 
+## Roadmap
+
+### Version 1
+
+- [] Daily ex price from poe.ninja
+- [] Ability to search your searches
+- [] Ability to sort searches
+- [] Ability to remove a search from Cadiro
+- [] Add support for more than unique items
+- [] Ability to select multiple searches and run them at once
+- [] ESD computations
+- [] Button to re-install original PTE version
+- [] Display outdated search (old seasons) as outdated
+- [] Display search name from PTE
+- [] PTE: Inputs for b/o price and s/o price when saving a search
+- [] PTE: Button to confirm a trade has failed / been successful
+
+### Version "One day maybe"
+
+- Ability to edit a search directly on Cadiro
+
+## Contribute to development
+
+Coming soon.
+
+## License
+
+GNU GPLv3
