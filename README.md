@@ -28,12 +28,16 @@ Here is what it looks like for now, the design is **very much** a work in progre
 ### Planned for release
 
 - [X] Button to re-install original PTE version
-- [x] Ability to search your searches
+- [X] Ability to search your searches
 - [ ] Refresh daily ex price from poewatch with a background job
+- [ ] Poe watch ruby API
+- [ ] Handle HC league, standard league... Use data from poewatch (https://api.poe.watch/leagues)
+- [ ] Item prices scoped by league
+- [ ] Proper display of search filters and renaming
 - [ ] Ability to sort searches
 - [ ] Ability to remove a search from Cadiro
-- [ ] Add support for more than unique items
 - [ ] Ability to select multiple searches and run them at once
+- [ ] Add support for more than unique items
 - [ ] ESD computations
 - [ ] Display outdated search (old seasons) as outdated
 - [ ] Display search name from PTE
