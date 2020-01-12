@@ -33,7 +33,7 @@ const CATEGORIES_DISPLAY = {
 
 // This component mainly parses the data from the pathofexile.com/trade website and displays it properly
 // Expects lots of maps and filters :D 
-@inject('seasonsStore')
+@inject('leaguesStore')
 @observer
 class SearchBreakdown extends React.Component {
   static propTypes = {

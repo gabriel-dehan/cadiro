@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do 
     namespace :v1 do 
       get 'analyses/save', to: "analyses#save"
-      post 'analyses/update_season_analysis', to: "analyses#update_season_analysis"
+      post 'analyses/update_league_analysis', to: "analyses#update_league_analysis"
     end
   end
 end

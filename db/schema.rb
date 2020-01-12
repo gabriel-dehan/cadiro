@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_222344) do
+ActiveRecord::Schema.define(version: 2020_01_12_191420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_01_06_222344) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "season_analyses", force: :cascade do |t|
-    t.bigint "season_id"
+  create_table "league_analyses", force: :cascade do |t|
+    t.bigint "league_id"
     t.bigint "analysis_id"
     t.float "max_buyout"
     t.float "min_sellout"
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 2020_01_06_222344) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["analysis_id"], name: "index_season_analyses_on_analysis_id"
-    t.index ["season_id"], name: "index_season_analyses_on_season_id"
+    t.index ["analysis_id"], name: "index_league_analyses_on_analysis_id"
+    t.index ["league_id"], name: "index_league_analyses_on_league_id"
   end
 
-  create_table "seasons", force: :cascade do |t|
+  create_table "leagues", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
     t.date "end_date"
@@ -64,6 +64,9 @@ ActiveRecord::Schema.define(version: 2020_01_06_222344) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "version"
+    t.string "display"
+    t.boolean "hardcore"
+    t.boolean "active"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,6 +85,6 @@ ActiveRecord::Schema.define(version: 2020_01_06_222344) do
 
   add_foreign_key "analyses", "items"
   add_foreign_key "analyses", "users"
-  add_foreign_key "season_analyses", "analyses"
-  add_foreign_key "season_analyses", "seasons"
+  add_foreign_key "league_analyses", "analyses"
+  add_foreign_key "league_analyses", "leagues"
 end

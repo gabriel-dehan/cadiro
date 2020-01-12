@@ -6,7 +6,7 @@ import SearchBreakdown from './SearchBreakdown';
 
 import PoeTradeIcon from '@assets/images/poetrade.png';
 
-@inject('seasonsStore', 'analysesStore')
+@inject('leaguesStore', 'analysesStore')
 @observer
 class Analysis extends React.Component {
   static propTypes = {
@@ -24,8 +24,8 @@ class Analysis extends React.Component {
   }
   
   get watchUrl() {
-    const { analysis, seasonsStore } = this.props;
-    return `https://pathofexile.com/trade/search/${seasonsStore.current.name}/${analysis.search_id}`;
+    const { analysis, leaguesStore } = this.props;
+    return `https://pathofexile.com/trade/search/${leaguesStore.current.name}/${analysis.search_id}`;
   }
 
   updateComments(comments) {
@@ -34,7 +34,7 @@ class Analysis extends React.Component {
 
   updateAnalysis() {
     // Todo: add loading
-    this.props.analysesStore.updateSeasonAnalysis(this.props.analysis.id, {
+    this.props.analysesStore.updateLeagueAnalysis(this.props.analysis.id, {
       comments: this.state.comments
     });
   }

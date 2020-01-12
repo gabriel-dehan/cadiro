@@ -39,10 +39,14 @@ Here is what it looks like for now, the design is **very much** a work in progre
 - [ ] Ability to select multiple searches and run them at once
 - [ ] Add support for more than unique items
 - [ ] ESD computations
-- [ ] Display outdated search (old seasons) as outdated
+- [ ] Display outdated search (old leagues) as outdated
 - [ ] Display search name from PTE
 - [ ] PTE: Inputs for b/o price and s/o price when saving a search
 - [ ] PTE: Button to confirm a trade has failed / been successful
+
+### Planned for v2
+
+- [ ] Statistics on which items were the most profitable in a specific league
 
 ### Version "One day maybe"
 
@@ -51,6 +55,9 @@ Here is what it looks like for now, the design is **very much** a work in progre
 ## Contribute to development
 
 Coming soon.
+
+- AWS S3
+- Redis
 
 ## License
 

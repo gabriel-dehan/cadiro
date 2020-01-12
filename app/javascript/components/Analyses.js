@@ -6,7 +6,7 @@ import Fuse from "fuse.js";
 import withStores from '../stores/withStores';
 import Analysis from './Analysis';
 
-@inject('analysesStore', 'seasonsStore', 'userStore')
+@inject('analysesStore', 'leaguesStore', 'userStore')
 @observer
 class Analyses extends React.Component {
   static propTypes = {
@@ -29,10 +29,10 @@ class Analyses extends React.Component {
         { name: 'item.item_type', weight: 0.7 },
         { name: 'item.rarity', weight: 0.3 },
         { name: 'item.tags', weight: 0.5 },
-        { name: 'season_analyses.season.name', weight: 0.3 },
-        { name: 'season_analyses.buyout.currency', weight: 0.1 },
-        { name: 'season_analyses.sellout.currency', weight: 0.1 },
-        { name: 'season_analyses.comments', weight: 0.4 },
+        { name: 'league_analyses.league.name', weight: 0.3 },
+        { name: 'league_analyses.buyout.currency', weight: 0.1 },
+        { name: 'league_analyses.sellout.currency', weight: 0.1 },
+        { name: 'league_analyses.comments', weight: 0.4 },
       ],
       tokenize: true,
       shouldSort: true,
@@ -47,7 +47,7 @@ class Analyses extends React.Component {
 
   componentDidMount() {
     this.props.userStore.setUser(this.props.data.current_user);
-    this.props.seasonsStore.setCurrent(this.props.data.current_season);
+    this.props.leaguesStore.setCurrent(this.props.data.current_league);
 
     this.setupSearch();
 
@@ -103,15 +103,15 @@ class Analyses extends React.Component {
     const { analyses } = this.state;
     
     return analyses.map(analysis => {
-        const season_analysis = analysis.season_analyses
-          .filter(sa => sa.season.name !== 'Standard')
-          .sort((a, b) => new Date(b.season.start_date) - new Date(a.season.start_date))
+        const league_analysis = analysis.league_analyses
+          .filter(sa => sa.league.name !== 'Standard')
+          .sort((a, b) => new Date(b.league.start_date) - new Date(a.league.start_date))
           [0];
 
         return <Analysis 
           key={analysis.id} 
           item={analysis.item}
-          analysis={season_analysis} 
+          analysis={league_analysis} 
         />
       }
     )

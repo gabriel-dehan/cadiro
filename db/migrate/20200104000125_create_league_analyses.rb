@@ -1,7 +1,7 @@
-class CreateSeasonAnalyses < ActiveRecord::Migration[5.2]
+class CreateLeagueAnalyses < ActiveRecord::Migration[5.2]
   def change
-    create_table :season_analyses do |t|
-      t.references :season, foreign_key: true
+    create_table :league_analyses do |t|
+      t.references :league, foreign_key: true
       t.references :analysis, foreign_key: true
       t.float :max_buyout
       t.float :min_sellout

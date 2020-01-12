@@ -1,5 +1,5 @@
 import React from 'react';
-import seasonsStore from '../stores/seasonsStore';
+import leaguesStore from '../stores/leaguesStore';
 
 const currencyIcons = {
   exalted: "http://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1",
@@ -17,7 +17,7 @@ export const formatPrice = (price, currency) => {
 };
 
 export const priceToCurrency = (priceInChaos) => {
-  const exaltedPrice = seasonsStore.current.currencies_prices.exalted;
+  const exaltedPrice = leaguesStore.current.currencies_prices.exalted;
   if (priceInChaos >= exaltedPrice) {
     return {
       price: (priceInChaos / exaltedPrice).toFixed(2),
@@ -36,6 +36,6 @@ export const chaosSubstraction = (currencyDataA, currencyDataB) => {
 };
 
 export const priceInChaos = (price, from = 'exalted') => {
-  const currentFromPrice = seasonsStore.current.currencies_prices[from];
+  const currentFromPrice = leaguesStore.current.currencies_prices[from];
   return price * currentFromPrice;
 }

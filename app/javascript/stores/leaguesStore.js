@@ -5,16 +5,16 @@ const initialState = {
   current: null,
 };
 
-class seasonsStore {
+class leaguesStore {
   constructor() {
     mobx.extendObservable(this, initialState);
-    autoSave(this, 'seasonsStore');
+    autoSave(this, 'leaguesStore');
   }
 
   @mobx.action 
-  setCurrent(season) {
-    this.current = season;
+  setCurrent(league) {
+    this.current = league;
   }
 }
 
-export default new seasonsStore();
+export default new leaguesStore();

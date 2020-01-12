@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   after_create :fetch_wiki_data
 
   has_many :analyses, dependent: :destroy
-  has_many :season_analyses, through: :analyses
+  has_many :league_analyses, through: :analyses
 
   def slug
     name.parameterize

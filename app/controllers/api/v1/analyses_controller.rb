@@ -93,13 +93,13 @@ class Api::V1::AnalysesController < Api::V1::APIController
     search_id = data.id
     search = data.search
     item = search.query
-    season = Season.find_by(name: search.league)
+    league = League.find_by(name: search.league)
 
     filters = item.filters
     stats = item.stats
     
     item = Item.find_or_create_by(name: item.name, item_type: item.type)
-    analysis = current_user.seasonal_analysis_for_item(item)
+    analysis = current_user.leagueal_analysis_for_item(item)
 
     analysis.max_buyout = 2
     analysis.buyout_currency = 'chaos'
@@ -117,16 +117,16 @@ class Api::V1::AnalysesController < Api::V1::APIController
     }, status: 200
   end
 
-  def update_season_analysis
-    @season_analysis = SeasonAnalysis.find(params[:id])
-    @season_analysis.update(season_analysis_params)
+  def update_league_analysis
+    @league_analysis = LeagueAnalysis.find(params[:id])
+    @league_analysis.update(league_analysis_params)
 
     render json: {
       status: 'success'
     }, status: 200
   end
 
-  def season_analysis_params 
+  def league_analysis_params 
     params.permit(:comments)
   end
 end

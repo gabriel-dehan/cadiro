@@ -9,8 +9,21 @@
 User.destroy_all
 User.create({ email: 'test@test.com', password: 'password' });
 
-Season.destroy_all
-Season.create([
+League.destroy_all
+
+# puts "Fetching poe watch data..."
+# PoeWatch::Api.refresh!
+
+# PoeWatch::League.all.each do |league|
+#   name
+#   display
+#   hardcore
+#   active
+#   start
+# end
+
+
+League.create([
   {
     name: "Metamorph",
     start_date: "2019-12-13",

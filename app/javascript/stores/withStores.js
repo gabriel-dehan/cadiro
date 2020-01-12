@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'mobx-react';
 import analysesStore from './analysesStore';
-import seasonsStore from './seasonsStore';
+import leaguesStore from './leaguesStore';
 import userStore from './userStore';
 
 function withStores(WrappedComponent) {
@@ -10,7 +10,7 @@ function withStores(WrappedComponent) {
     get stores() {
       return {
         analysesStore,
-        seasonsStore,
+        leaguesStore,
         userStore,
       };
     }

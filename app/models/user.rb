@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :analyses, dependent: :destroy
-  has_many :season_analyses, through: :analyses
+  has_many :league_analyses, through: :analyses
 
   mount_uploader :pte_script, PteScriptUploader
   
@@ -14,16 +14,16 @@ class User < ApplicationRecord
   
   before_create :generate_token
 
-  def current_season_analyses
-    season_analyses.where(season: Season.current)
+  def current_league_analyses
+    league_analyses.where(league: League.current)
   end
 
   def analysis_for_item(item)
     analyses.where(item: item).first_or_create
   end
 
-  def seasonal_analysis_for_item(item, season = Season.current)
-    analysis_for_item(item).season_analyses.find_or_create_by(season: season)
+  def leagueal_analysis_for_item(item, league = League.current)
+    analysis_for_item(item).league_analyses.find_or_create_by(league: league)
   end
 
   private

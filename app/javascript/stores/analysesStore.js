@@ -3,7 +3,7 @@ import autoSave from './localStorageAutoSave';
 import userStore from './userStore';
 
 const initialState = {
-  season: null,
+  league: null,
 };
 
 class analysesStore {
@@ -13,12 +13,12 @@ class analysesStore {
   }
 
   @mobx.action 
-  setSeason(season) {
-    this.season = season;
+  setLeague(league) {
+    this.league = league;
   }
 
-  updateSeasonAnalysis(id, params) {
-    const url = `${window.location.origin}/api/v1/analyses/update_season_analysis`;
+  updateLeagueAnalysis(id, params) {
+    const url = `${window.location.origin}/api/v1/analyses/update_league_analysis`;
         
     params = { id, poe_auth_token: userStore.token, ...params };
     

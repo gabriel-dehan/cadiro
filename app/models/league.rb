@@ -1,13 +1,13 @@
-class Season < ApplicationRecord
+class League < ApplicationRecord
   validates :name, presence: true
   validates :start_date, presence: true
 
-  has_many :season_analyses
+  has_many :league_analyses
 
   after_create :fetch_currency_prices
 
   def self.current
-    Season.order(start_date: :desc).first
+    League.order(start_date: :desc).first
   end
 
   def fetch_currency_prices
