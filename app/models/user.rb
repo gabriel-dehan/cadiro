@@ -22,7 +22,7 @@ class User < ApplicationRecord
     analyses.where(item: item).first_or_create
   end
 
-  def leagueal_analysis_for_item(item, league = League.current)
+  def league_analysis_for_item(item, league = League.current)
     analysis_for_item(item).league_analyses.find_or_create_by(league: league)
   end
 

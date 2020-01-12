@@ -99,7 +99,7 @@ class Api::V1::AnalysesController < Api::V1::APIController
     stats = item.stats
     
     item = Item.find_or_create_by(name: item.name, item_type: item.type)
-    analysis = current_user.leagueal_analysis_for_item(item)
+    analysis = current_user.league_analysis_for_item(item)
 
     analysis.max_buyout = 2
     analysis.buyout_currency = 'chaos'

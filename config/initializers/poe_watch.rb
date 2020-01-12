@@ -1,0 +1,1 @@
+require 'poe_watch'

@@ -1,44 +1,40 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'poe_watch'
+
+KNOWN_LEAGUES_VERSIONS = {
+  "Metamorph" => "3.9",
+  "Blight" => "3.8",
+  "Legion" => "3.7",
+  "Synthesis" => "3.6",
+  "Betrayal" => "3.5",
+  "Delve" => "3.4",
+  "Incursion" => "3.3",
+  "Bestiary" =>	"3.2",
+  "Abyss" => "3.1",
+  "Harbinger" =>	"3.0",
+  "Legacy" =>	"2.6",
+  "Breach" =>	"2.5"
+}
 
 User.destroy_all
 User.create({ email: 'test@test.com', password: 'password' });
 
+puts "Fetching poe watch data..."
+PoeWatch::Api.refresh!(3600 * 24)
+puts "Fetched!"
+
 League.destroy_all
-
-# puts "Fetching poe watch data..."
-# PoeWatch::Api.refresh!
-
-# PoeWatch::League.all.each do |league|
-#   name
-#   display
-#   hardcore
-#   active
-#   start
-# end
-
-
-League.create([
-  {
-    name: "Metamorph",
-    start_date: "2019-12-13",
-    version: "3.9"
-  },
-  {
-    name: "Blight",
-    start_date: "2019-09-06",
-    end_date: "2019-12-09",
-    version: "3.8"
-  },
-  {
-    name: "Legion",
-    start_date: "2019-06-07",
-    end_date: "2019-09-03",
-    version: "3.7"
-  }
-])
+puts "Creating Leagues..."
+PoeWatch::League.all.each do |league|
+  if !league.event
+    league_version_data = KNOWN_LEAGUES_VERSIONS.find { |name, version| league.name.match(Regexp.new(name)) }
+    League.create({
+      name: league.name,
+      display: league.display,
+      hardcore: league.hardcore,
+      active: league.active,
+      start_date: league.start,
+      end_date: league.end,
+      version: league_version_data ? league_version_data.last : nil
+    })
+  end
+end
