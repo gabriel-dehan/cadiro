@@ -16,7 +16,7 @@ class Item < ApplicationRecord
 
   private
   def fetch_wiki_data
-    # Only works for uniquest for now
+    # Only works for uniques for now
     result = PoeWikiApi.search_unique(name)
     item_data = result["cargoquery"][0]
     if item_data

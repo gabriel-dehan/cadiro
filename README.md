@@ -29,9 +29,11 @@ Here is what it looks like for now, the design is **very much** a work in progre
 
 - [X] Button to re-install original PTE version
 - [X] Ability to search your searches
+- [X] Poe watch ruby API
+- [X] Use for leagues data from poewatch (https://api.poe.watch/leagues)
 - [ ] Refresh daily ex price from poewatch with a background job
-- [ ] Poe watch ruby API
-- [ ] Handle HC league, standard league... Use data from poewatch (https://api.poe.watch/leagues)
+- [ ] Retrieve all item data from PoE Watch through a background job
+- [ ] Handle HC league, standard league... 
 - [ ] Item prices scoped by league
 - [ ] Proper display of search filters and renaming
 - [ ] Ability to sort searches

@@ -2,8 +2,6 @@ class RefreshPoeWatchDataJob < ApplicationJob
   queue_as :default
 
   def perform()
-    League.all.each do |league|
-      league.fetch_currency_prices
-    end
+    PoeWatch::Api.refresh!
   end
 end
